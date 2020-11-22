@@ -1,0 +1,27 @@
+#root {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  width: 150px;
+  background-color: dodgerblue;
+  padding: 8px;
+  margin: 10px auto auto;
+  cursor: pointer;
+}
+
+.game-screen {
+  width: 300px;
+}
+
+input {
+  height: 30px;
+  width: 200px;
+}

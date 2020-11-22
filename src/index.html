@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>typing-game</title>
+  </head>
+  <body>
+    <div id="root">
+      <div class="game-screen">
+        <div class="header">
+          <div>남은 시간: <span id="time"></span></div>
+          <div>점수: <span id="score"></span></div>
+        </div>
+        <div class="question">
+          <!--타이핑해야 할 word-->
+          <h1 id="current-word">문제 단어</h1>
+        </div>
+        <div>
+          <!--typing here-->
+          <input type="text" placeholder="type here" id="word-input" />
+        </div>
+        <div id="start" class="button"></div>
+      </div>
+      <div class="result-screen" style="display: none">
+        <h3>Mission Complete!</h3>
+        <h2 id="resultScore"></h2>
+        <h4 id="averageTime"></h4>
+        <div id="restart" class="button">다시 시작</div>
+      </div>
+    </div>
+  </body>
+</html>
