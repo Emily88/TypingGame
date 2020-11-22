@@ -84,7 +84,7 @@ class App {
 
     restartBtn &&
       restartBtn.addEventListener('click', () => {
-        this.router && this.router.navigateTo('/')
+        this.router && this.router.navigateTo('')
       })
   }
 
