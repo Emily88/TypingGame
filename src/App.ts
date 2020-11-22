@@ -40,7 +40,7 @@ const STATUS = {
 }
 
 class App {
-  private readonly data: WordInfo[] = []
+  readonly data: WordInfo[] = []
   private router: Router | undefined
   private status: number = STATUS.READY
   private wordIndex: number = 0
