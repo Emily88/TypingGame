@@ -1,5 +1,5 @@
-import Router from './CustomRouter'
-import { WordInfo } from './types'
+import { WordInfo, Router } from './types'
+import CustomRouter from './CustomRouter'
 
 const wordInput: HTMLInputElement | null = document.querySelector('#word-input')
 const currentWord: HTMLHeadingElement | null = document.querySelector(
@@ -62,7 +62,7 @@ class App {
   }
 
   registerRouter() {
-    this.router = new Router()
+    this.router = CustomRouter()
     this.router.add('result', () => {
       if (resultScore && averageTime) {
         resultScore.innerHTML = `당신의 점수는 ${
