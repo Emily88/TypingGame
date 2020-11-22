@@ -1,7 +1,6 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const webpack = require('webpack')
 
 module.exports = {
   mode: 'development',
@@ -46,9 +45,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: './index.html'
-    }),
-    new webpack.EnvironmentPlugin({
-      URL: 'https://my-json-server.typicode.com/kakaopay-fe/resources/words'
     })
   ]
 }
