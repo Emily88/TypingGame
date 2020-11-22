@@ -51,7 +51,7 @@ class App {
   constructor(data: WordInfo[]) {
     if (!instance) {
       instance = this
-      this.data = data.slice(0, 3)
+      this.data = data
       this.registerRouter()
       this.init()
       wordInput && wordInput.addEventListener('change', this.match.bind(this))
@@ -81,7 +81,6 @@ class App {
       hide(resultScreen)
       this.init()
     })
-
     restartBtn &&
       restartBtn.addEventListener('click', () => {
         this.router && this.router.navigateTo('')
@@ -97,10 +96,12 @@ class App {
   }
 
   initUI() {
-    if (this.status === STATUS.READY && startBtn) {
-      startBtn.innerHTML = '시작'
-    } else if (this.status === STATUS.ING && startBtn) {
-      startBtn.innerHTML = '초기화'
+    if (startBtn) {
+      if (this.status === STATUS.READY) {
+        startBtn.innerHTML = '시작'
+      } else if (this.status === STATUS.ING) {
+        startBtn.innerHTML = '초기화'
+      }
     }
     if (wordInput && currentWord && scoreDisplay && timeDisplay && wordInput) {
       wordInput.value = ''
@@ -142,7 +143,6 @@ class App {
     if (currentWord) {
       currentWord.innerHTML = text
     }
-
     this.time = second
     if (timeDisplay) {
       timeDisplay.innerHTML = '' + this.time
@@ -173,7 +173,6 @@ class App {
       if (scoreDisplay) {
         scoreDisplay.innerHTML = '' + --this.score
       }
-
       const isLast = this.next()
       if (isLast) {
         this.router && this.router.navigateTo('result')
