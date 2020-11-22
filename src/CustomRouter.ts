@@ -3,6 +3,7 @@ interface Route {
   cb: () => void
   options?: object
 }
+
 class CustomRouter {
   private routes: Route[]
   private readonly root: string
