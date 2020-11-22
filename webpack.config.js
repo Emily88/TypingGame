@@ -9,7 +9,7 @@ module.exports = {
   devtool: 'inline-source-map',
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'public')
   },
   module: {
     rules: [
@@ -20,11 +20,11 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: ['ts-loader'],
-        exclude: /(node_modules)|(dist)/
+        exclude: /(node_modules)|(public)/
       },
       {
         test: /\.js$/,
-        exclude: /(node_modules)|(dist)/,
+        exclude: /(node_modules)|(pulic)/,
         use: {
           loader: 'babel-loader'
         }
@@ -39,7 +39,7 @@ module.exports = {
     extensions: ['.tsx', '.js', '.ts', '.json']
   },
   devServer: {
-    contentBase: '/dist'
+    contentBase: '/public'
   },
   plugins: [
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
