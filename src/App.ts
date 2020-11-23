@@ -64,13 +64,14 @@ class App {
   registerRouter() {
     this.router = CustomRouter()
     this.router.add('result', () => {
+      const sec = isNaN(this.totalTime / this.score)
+        ? 0
+        : (this.totalTime / this.score).toFixed(2)
       if (resultScore && averageTime) {
         resultScore.innerHTML = `당신의 점수는 ${
           this.score < 0 ? 0 : this.score
         }점 입니다.`
-        averageTime.innerHTML = `단어당 평균 답변 시간은 ${
-          (this.totalTime / this.score).toFixed(2) || 0
-        }초 입니다.`
+        averageTime.innerHTML = `단어당 평균 답변 시간은 ${sec}초 입니다.`
       }
 
       hide(gameScreen)
